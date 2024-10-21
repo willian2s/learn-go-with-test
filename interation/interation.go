@@ -1,10 +1,14 @@
 package interation
 
-const repeatCount = 5
-
-func Repeat(character string) string {
+func Repeat(character string, repeatCount int) string {
+	count := 5
 	var repeat string
-	for i := 0; i < repeatCount; i++ {
+
+	if repeatCount != 0 {
+		count = repeatCount
+	}
+
+	for i := 0; i < count; i++ {
 		repeat += character
 	}
 	return repeat

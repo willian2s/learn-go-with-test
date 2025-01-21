@@ -8,12 +8,7 @@ const frenchHelloPrefix = "Bonjour"
 const portugueseHelloPrefix = "Olá"
 const japaneseHelloPrefix = "こんにちは"
 
-func Hello(name string, language string) string {
-	if name == "" {
-		return englishHelloPrefix + ", World!"
-	}
-
-	prefix := englishHelloPrefix
+func greetingPrefix(language string) (prefix string) {
 	switch language {
 	case "Spanish":
 		prefix = spanishHelloPrefix
@@ -23,7 +18,18 @@ func Hello(name string, language string) string {
 		prefix = portugueseHelloPrefix
 	case "Japanese":
 		prefix = japaneseHelloPrefix
+	default:
+		prefix = englishHelloPrefix
 	}
+	return
+}
+
+func Hello(name string, language string) string {
+	if name == "" {
+		return englishHelloPrefix + ", World!"
+	}
+
+	prefix := greetingPrefix(language)
 
 	return fmt.Sprintf("%s, %s!", prefix, name)
 }

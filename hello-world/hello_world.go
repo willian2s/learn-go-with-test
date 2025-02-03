@@ -7,6 +7,11 @@ const spanishHelloPrefix = "Hola"
 const frenchHelloPrefix = "Bonjour"
 const portugueseHelloPrefix = "Olá"
 const japaneseHelloPrefix = "こんにちは"
+const italianHelloPrefix = "Ciao"
+const chineseHelloPrefix = "你好"
+const dutchHelloPrefix = "Hallo"
+const malaioHelloPrefix = "Halo"
+const koreanHelloPrefix = "안녕하세요"
 
 func greetingPrefix(language string) (prefix string) {
 	switch language {
@@ -18,6 +23,16 @@ func greetingPrefix(language string) (prefix string) {
 		prefix = portugueseHelloPrefix
 	case "Japanese":
 		prefix = japaneseHelloPrefix
+	case "Italian":
+		prefix = italianHelloPrefix
+	case "Chinese":
+		prefix = chineseHelloPrefix
+	case "Malaio":
+		prefix = malaioHelloPrefix
+	case "Korean":
+		prefix = koreanHelloPrefix
+	case "Dutch":
+		prefix = dutchHelloPrefix
 	default:
 		prefix = englishHelloPrefix
 	}

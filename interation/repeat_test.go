@@ -1,6 +1,9 @@
 package interation
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 type CharacterTest struct {
 	title     string
@@ -29,6 +32,12 @@ func TestRepeat(t *testing.T) {
 			}
 		})
 	}
+}
+
+func ExampleRepeat() {
+	repated := Repeat("a", 5)
+	fmt.Println((repated))
+	// Output: aaaaa
 }
 
 func BenchmarkRepeat(b *testing.B) {
